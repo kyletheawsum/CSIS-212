@@ -16,10 +16,10 @@ import java.util.Scanner;
 public class ProgramFour {
 	
 	/**
-	 * 
+	 * return sum of two integers
 	 * @param int1
 	 * @param int2
-	 * @return int
+	 * @return int sum
 	 */
 	private int sum(int int1, int int2) {
 		int sum = int1 + int2;
@@ -27,10 +27,10 @@ public class ProgramFour {
 	}
 	
 	/**
-	 * 
+	 * return difference of two integers
 	 * @param int1
 	 * @param int2
-	 * @return int
+	 * @return int difference
 	 */
 	private int difference(int int1, int int2) {
 		int difference = int1 - int2;
@@ -38,10 +38,10 @@ public class ProgramFour {
 	}
 	
 	/**
-	 * 
+	 * return product of two integers
 	 * @param int1
 	 * @param int2
-	 * @return int
+	 * @return int product
 	 */
 	private int product(int int1, int int2) {
 		int product = int1 * int2;
@@ -49,10 +49,10 @@ public class ProgramFour {
 	}
 	
 	/**
-	 * 
+	 * return quotient of two integers
 	 * @param int1
 	 * @param int2
-	 * @return double
+	 * @return double quotient
 	 */
 	private double quotient(int int1, int int2) {
 		/**
@@ -60,8 +60,10 @@ public class ProgramFour {
 		 * to achieve greater accuracy, we convert to double and return a double
 		 */
 		
+		// convert int values to type double
 		double d1 = (double) int1;
 		double d2 = (double) int2;
+		
 		double quotient = d1 / d2;
 		return quotient;
 	}

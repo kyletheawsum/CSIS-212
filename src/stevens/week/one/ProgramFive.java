@@ -16,10 +16,10 @@ import java.util.Scanner;
 public class ProgramFive {
 
 	/**
-	 * 
+	 * Use modulo operator to return remainder of two integers
 	 * @param int1
 	 * @param int2
-	 * @return int
+	 * @return int remainder
 	 */
 	private int remainder(int int1, int int2) {
 		return int1 % int2;

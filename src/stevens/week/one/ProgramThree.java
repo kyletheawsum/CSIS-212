@@ -12,14 +12,23 @@ package stevens.week.one;
  */
 public class ProgramThree {
 	
+	/**
+	 * Print "1" using "print"
+	 */
 	private void print() {
 		System.out.print("1 ");
 	}
 	
+	/**
+	 * Print "2" and "3" using "printF"
+	 */
 	private void printF() {
 		System.out.printf("%d %d ", 2, 3);
 	}
 	
+	/**
+	 * Print "4" using "println"
+	 */
 	private void printLn() {
 		System.out.println(4);
 	}
@@ -28,9 +37,16 @@ public class ProgramThree {
 		
 		System.out.println("Kyle Stevens - Assignment 1: Program 3\n");
 		
+		// Constructor call to instantiate the class
 		ProgramThree p3 = new ProgramThree();
+		
+		// call print method
 		p3.print();
+		
+		// call printf method
 		p3.printF();
+		
+		// call println method
 		p3.printLn();
 	}
 

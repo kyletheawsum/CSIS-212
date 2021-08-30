@@ -20,11 +20,19 @@ public class ProgramOne {
 	 * @param String iterationThree
 	 */
 	private static void ageOfTechnology(String iterationOne, String iterationTwo, String iterationThree) {
+		
+		// using printf
 		System.out.printf("When thinking of how technology has helped with the spread of the Gospel, %n"
 				+ "three modes come to mind: %s, %s, and %s.\n", iterationOne, iterationTwo, iterationThree	);
+		
+		// using println
 		System.out.println("With the invention of the Printing Press, the Gospel could be written/spread more quickly than when it was copied by hand");
 		System.out.println("Audio such as radio, television, and podcasts serve to reach even more people, who might not necessarily own or read the Bible.");
+		
+		// using print
 		System.out.print("Electronic Bible, such as Bible apps have brought the Word of God to our fingertips, making access easier than ever.\n");
+		
+		// using printf
 		System.out.printf("We can see with the progression of these three iterations (%s, %s, %s) that technology has exponentially increased the spread of the Gospel.", iterationOne, iterationTwo, iterationThree);
 	}
 	

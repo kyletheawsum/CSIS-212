@@ -15,10 +15,16 @@ import javax.swing.JOptionPane;
  */
 public class ProgramTwo {
 	
+	// static final String [] of verses. "final" since this will not change in the program
 	private static final String[] VERSES = {"Matthew 6:11","Ephesians 2:2","Philippians 3:10","Romans 3:17",
 											"John 12:13","Acts 1:8","Psalm 1:1","1 Peter 1:14",
 											"Mark 12:32","1 Thessalonians 3:6"};
 	
+	/**
+	 * return a random verse from the String[] of verses
+	 * hardcoded max random number since the total number of verses will not change
+	 * @return String verse
+	 */
 	private static String getVerse() {
 		int i = (int) (Math.random()*9);
 		
@@ -29,11 +35,16 @@ public class ProgramTwo {
 		
 		System.out.println("Kyle Stevens - Assignment 1: Program 2\n");
 		
+		// ask user for his/her name and store it as a String
 		String name;
 		name = JOptionPane.showInputDialog("Name");
 		
+		// set the response as a String
+		// format the response to include the user's name
 		String response = String.format("Welcome, %s, To The Libery University Website!\n"
-										+ "The Scripture for the day is: %s", name, getVerse());
+										+ "The Scripture for the day is: %s", name, getVerse());	// get verse method call
+		
+		// returne the formatted response
 		JOptionPane.showMessageDialog(null, response);
 	}
 
