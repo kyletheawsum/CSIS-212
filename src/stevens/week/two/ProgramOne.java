@@ -23,6 +23,8 @@ public class ProgramOne {
 	
 	public static void main(String[] args) {
 		
+		System.out.println("Kyle Stevens - Assignment 2: Program 1\n");
+
 		// initialize scanner
 		Scanner scan = new Scanner(System.in);
 		
