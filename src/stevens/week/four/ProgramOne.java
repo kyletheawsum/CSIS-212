@@ -33,7 +33,7 @@ public class ProgramOne {
 		// initialize scanner
 		Scanner scan = new Scanner(System.in);
 		
-		// loop through all three employee wages, even if the user inputs an invalid character
+		// loop through, even if the user inputs an invalid character
 		while(true) {
 					
 			// use a try/catch to handle invalid characters
