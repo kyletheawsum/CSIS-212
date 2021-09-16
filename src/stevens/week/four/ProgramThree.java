@@ -1,4 +1,8 @@
-package stevens.week.four;
+ package stevens.week.four;
+
+import java.util.InputMismatchException;
+
+import javax.swing.JOptionPane;
 
 /**
  * ProgramOne - Exercise 5.35 (Computer-Assisted Instruction): The use of computers in education is referred to as computer ¬assisted instruction (CAI). 
@@ -18,4 +22,64 @@ package stevens.week.four;
  */
 public class ProgramThree {
 
+	
+	private static int getRandomInt() {
+		// get random
+		int random = (int) (Math.random() * 9) + 1;
+		return random;
+	}
+	
+	private static boolean isCorrectAnswer(int int1, int int2, int value) {
+		int correctAnswer = int1 * int2;
+		if(value == correctAnswer) {
+			return true;
+		}
+		
+		return false;
+	}
+		
+	public static void main(String[] args) {
+		
+		System.out.println("Kyle Stevens - Assignment 4: Program 3\n");
+		
+		// loop through, even if the user inputs an invalid character
+		while(true) {
+					
+			// use a try/catch to handle invalid characters
+			
+			int int1 = getRandomInt();
+			int int2 = getRandomInt();
+			String value = JOptionPane.showInputDialog(String.format("How much is %d time %d", int1, int2));
+			
+			if(value == null) {
+				break;
+			}
+			
+			try {
+				
+				while(true) {
+					if(value == null) {
+						break;
+					}
+					int userAnswer = Integer.parseInt(value);
+
+					if(isCorrectAnswer(int1, int2, userAnswer)) {
+						JOptionPane.showMessageDialog(null, "Very Good!");
+						break;
+					} else {
+						value = JOptionPane.showInputDialog(String.format("No. Please try again.\nHow much is %d time %d", int1, int2));
+					}
+				}
+				
+
+			} catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "Please enter Integer values only!");
+			} catch(InputMismatchException | NullPointerException e) {
+				break;
+			}
+		}
+
+
+
+	}
 }
