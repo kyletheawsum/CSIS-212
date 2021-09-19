@@ -38,7 +38,7 @@ public class ProgramTwo {
 				
 				// read Radius 
 				System.out.print("Enter Radius: ");
-				int x = scan.nextInt();
+				double x = scan.nextDouble();
 				
 				System.out.println(circleArea(x));
 				
