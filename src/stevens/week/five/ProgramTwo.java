@@ -22,62 +22,44 @@ public class ProgramTwo {
 		
 		System.out.println("Kyle Stevens - Assignment 5: Program 2\n");
 
-		//declared variables
-		int results[] = new int[11];
-		
-		Dice dice = new Dice();
-	
-		for (int i = 0; i < results.length; i++)
-		{
-			results[i] = 0;
-		}
-	
+		//declare int[] os length 11 since there are 11 possible values of the dice rolls
+		int[] diceValuesRolled = new int[11];
+				
+		// roll dice 36000 times
 		for (int i = 0; i < 36000; i++) {
 			
 			// subtract 2 since the starting index == 0, but dice sum starting index == 2
-			int sum = dice.getSum() - 2;
+			// otherwise, indexes would be in range of [2-12] instead of [0-10]
+			int sum = Dice.getSumOfDice() - 2;
 			
 			// add 1 to the result at the corresponding index (i.e. - if 5 was rolled, add 1 to result[4] (index for 5))
-			results[sum] += 1;
+			// indexes are [0-10]
+			diceValuesRolled[sum] += 1;
 		}
 		
 		System.out.printf("%3s%14s\n", "Sum", "Times Rolled");
-	
-		for (int diceRolled = 0; diceRolled  < results.length;  diceRolled++)
+		
+		// print each value rolled and the frequency of the value rolled
+		for (int valueRolled = 0; valueRolled  < diceValuesRolled.length;  valueRolled++)
 		{
-			//int percent = results[ diceRolled ] / ( 360 );
-			System.out.printf("%3d%14d\n", diceRolled+2, results[diceRolled]);
+			System.out.printf("%3d%14d\n", valueRolled+2, diceValuesRolled[valueRolled]);
 		}
 	}
 }
 
 class Dice {
-	
-	//declared variables
-	private static int die1;
-	private static int die2;
-	
-	//constructor
-	public Dice()
-	{
-		die1 = 0;
-		die2 = 0;
-	}
-	
+		
 	//roll the dice
-	private int rollDie()
+	private static int rollDie()
 	{
 		// random number between 1 and 6
 		Random r = new Random();
-		return (r.nextInt(6) + 1);
+		return r.nextInt(6) + 1;
 	}
 	
 	//get the value
-	public int getSum()
+	public static int getSumOfDice()
 	{
-		die1 = rollDie();
-		die2 = rollDie();
-	
-		return die1 + die2;
+		return rollDie() + rollDie();
 	}
 }

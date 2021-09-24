@@ -15,8 +15,10 @@ import java.util.Scanner;
 public class ProgramOne {
 
 	private static int product(Integer[] intArray) {
+		// product = 1 to initialize
 		int product = 1;
 		
+		// multiply product
 		for(int i = 0; i < intArray.length; i++) {
 			product *= intArray[i];
 		}
@@ -35,33 +37,46 @@ public class ProgramOne {
 		
 		// loop through, even if the user inputs an invalid character
 		while(true) {
-					
+			
+			// declare string outside of try/catch to use it in the catch clause
+			String values = "";
+			
 			// use a try/catch to handle invalid characters
 			try {
 				
 				System.out.print("Enter integers, separated by a space (\" \"): ");
-				String[] integers = scan.nextLine().split(" ");
-				//System.out.println(integers.length);
+				values = scan.nextLine();
+				
+				// check if values are only integers
+				// if not, throw a NumberFormatException
+				if(!values.matches("([0-9]\s?)+|e")) {
+					throw new NumberFormatException();
+				}
+				
+				// convert input to an array to iterate through and convert to integers
+				String[] integers = values.split(" ");
+				
+				// create integer array the same length as the string array
 				Integer[] intArray = new Integer[integers.length];
 				
-				
-				
+				// store inputted integers in integer array
 				for(int i = 0; i < integers.length; i++) {
-					
 					intArray[i] = Integer.parseInt(integers[i]);
 				}
 				
-				
+				// return product
 				System.out.println(product(intArray));
-				
-//				for(int i = 0; i < intArray.length; i++) {
-//					System.out.println(intArray[i]);
-//				}
-
-				
-			} catch(Exception e) {
+								
+			} catch(NumberFormatException e) {
+				if(values.contains("e"))
+					break;
+				// Remind user of valid values
+				System.out.println("**** Please enter Integer values only ****");
+				System.out.println("** Press 'e' to exit.\n");
+			}
+			catch(Exception e) {
 				// ext option caught since Scanner is looking only for Integers
-				if(scan.next().contains("e"))
+				if(values.contains("e"))
 					break;
 				else {
 					// Remind user of valid values
