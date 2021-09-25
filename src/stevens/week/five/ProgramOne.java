@@ -49,7 +49,7 @@ public class ProgramOne {
 				
 				// check if values are only integers
 				// if not, throw a NumberFormatException
-				if(!values.matches("([0-9]\s?)+|e")) {
+				if(!values.matches("([0-9]\\s?)+|e")) {
 					throw new NumberFormatException();
 				}
 				
