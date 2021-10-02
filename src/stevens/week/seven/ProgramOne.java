@@ -18,10 +18,10 @@ import java.util.Scanner;
 public class ProgramOne {
 
 	public static void main(String[] args) {
-		Shape rectangle = new Rectangle((float) 3.123456, (float) 4.654321);
-		
-		System.out.println(rectangle.calculateArea());
-		System.out.println(rectangle.calculatePerimeter());
+//		Shape rectangle = new Rectangle((float) 3.123456, (float) 4.654321);
+//		
+//		System.out.println(rectangle.calculateArea());
+//		System.out.println(rectangle.calculatePerimeter());
 		
 		System.out.println("Kyle Stevens - Assignment 3: Program 2\n");
 
@@ -31,26 +31,44 @@ public class ProgramOne {
 		// loop through all three employee wages, even if the user inputs an invalid character
 		while(true) {
 					
+			float length = 0, width = 0;
+
 			// use a try/catch to handle invalid characters
-			try {
-				
-				float length = 0, width = 0;
-				
-				while(length == 0 && width == 0) {
+			try {				
+				while(length == 0 || width == 0) {
 					System.out.println("1. Set Length");
 					System.out.println("2: Set width");
 					System.out.println("3: Exit");
-					System.out.println("Choice: ");
+					System.out.print("Choice: ");
 					
-					if(scan.next() == "1") {
-						
+					Integer selection = scan.nextInt();
+					if(selection == 1) {
+						System.out.print("Set Length: ");
+						length = Float.parseFloat(scan.next());
+						continue;
+					}
+					if(selection == 2) {
+						System.out.print("Set Width: ");
+						width = Float.parseFloat(scan.next());
+						continue;
+					}
+					if(selection == 3) {
+						break;
+					}
+					else {
+						throw new InputMismatchException();
 					}
 				}
+				Shape rectangle = new Rectangle((float) length, (float) width);
 				
+				System.out.println("Area: " + rectangle.calculateArea());
+				System.out.println("Perimeter: " + rectangle.calculatePerimeter());
+				System.out.println();
+
 				
 			} catch(InputMismatchException e) {
 				// ext option caught since Scanner is looking only for Integers
-				if(scan.next().equals("e"))
+				if(scan.next().equals("e") || scan.nextInt() == 3)
 					break;
 				else {
 					// Remind user of valid values
