@@ -17,6 +17,8 @@ public class ProgramOne {
 		
 	public static void main(String[] args) {
 		
+		System.out.println("Kyle Stevens - Assignment 6: Program 1\n");
+
 		Date d = new Date(2020,01,01);
 		System.out.println(d.displayDate());
 	}

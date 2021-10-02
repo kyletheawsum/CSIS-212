@@ -1,5 +1,8 @@
 package stevens.week.seven;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 /**
  * Program One - Exercise 8.4 JHTP (Rectangle Class): Create a class Rectangle with attributes length and 
  * width, each of which defaults to 1. Provide methods that calculate the rectangle's perimeter and 
@@ -19,55 +22,47 @@ public class ProgramOne {
 		
 		System.out.println(rectangle.calculateArea());
 		System.out.println(rectangle.calculatePerimeter());
-	}
+		
+		System.out.println("Kyle Stevens - Assignment 3: Program 2\n");
 
-}
+		// initialize scanner
+		Scanner scan = new Scanner(System.in);
+		
+		// loop through all three employee wages, even if the user inputs an invalid character
+		while(true) {
+					
+			// use a try/catch to handle invalid characters
+			try {
+				
+				float length = 0, width = 0;
+				
+				while(length == 0 && width == 0) {
+					System.out.println("1. Set Length");
+					System.out.println("2: Set width");
+					System.out.println("3: Exit");
+					System.out.println("Choice: ");
+					
+					if(scan.next() == "1") {
+						
+					}
+				}
+				
+				
+			} catch(InputMismatchException e) {
+				// ext option caught since Scanner is looking only for Integers
+				if(scan.next().equals("e"))
+					break;
+				else {
+					// Remind user of valid values
+					System.out.println("**** Please enter Numeric values only ****");
+					System.out.println("** Press 'e' to exit.\n");
+				}
+			}
+		}
+		
+		// close the scanner
+		scan.close();
 
-
-class Rectangle extends Shape {
-	
-	private float length = 1;
-	private float width = 1;
-	
-	private void setLength(float length) {
-		this.length = length;
 	}
-	
-	private float getLength() {
-		return this.length;
-	}
-	
-	private void setWidth(float width) {
-		this.width = width;
-	}
-	
-	private float getWidth() {
-		return this.width;
-	}
-	
-	public Rectangle(float length, float width) {
-		setLength(length);
-		setWidth(width);
-	}
-	
-	@Override
-	float calculateArea() {
-		float area = getLength() * getWidth(); 
-		return area;
-	}
-
-	@Override
-	float calculatePerimeter() {
-		float perimeter = (getLength() * 2) + (getWidth() * 2);
-		return perimeter;
-	}
-	
-}
-
-abstract class Shape {
-	
-	abstract float calculateArea();
-	
-	abstract float calculatePerimeter();
 
 }

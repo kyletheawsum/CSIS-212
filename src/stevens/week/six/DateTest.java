@@ -1,74 +1,11 @@
 package stevens.week.six;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
-
-import stevens.week.six.Date;
-
-@Tag("UnitTest")
 public class DateTest {
 	
-	/**
-	 * Unit Tests using the junit.jupiter.api
-	 */
-	
-	@Test
-	void testDateOne() {
-		Date d = new Date(2020,01,01);
+	static void testDates() {
 		
-		String expectedDate = "1/1/2020";
-		String actualDate = d.displayDate();
-		
-		assertEquals(actualDate, expectedDate);
-	}
-	
-	@Test
-	void testDateTwo() {
-		Date d = new Date(1970,12,31);
-		
-		String expectedDate = "12/31/1970";
-		String actualDate = d.displayDate();
-		
-		assertEquals(actualDate, expectedDate);
-	}
+		System.out.println("Kyle Stevens - Assignment 6: Program 1\n");
 
-	
-	@Test
-	void testDateThree() {
-		Date d = new Date(1989,05,23);
-		
-		String expectedDate = "5/23/1989";
-		String actualDate = d.displayDate();
-		
-		assertEquals(actualDate, expectedDate);
-	}
-
-	
-	@Test
-	void testDateFour() {
-		Date d = new Date(1995,03,06);
-		
-		String expectedDate = "3/6/1995";
-		String actualDate = d.displayDate();
-		
-		assertEquals(actualDate, expectedDate);
-	}
-
-	
-	@Test
-	void testDateFive() {
-		Date d = new Date(1900,02,29);
-		
-		String expectedDate = "2/29/1900";
-		String actualDate = d.displayDate();
-		
-		assertEquals(actualDate, expectedDate);
-	}
-	
-	@Test
-	void testDateNotUsingJunit() {
 		// Date 1
 		Date d1 = new Date(2020,01,01);
 		
@@ -123,7 +60,10 @@ public class DateTest {
 		System.out.println("expectedDate: " + expectedDate5);
 		System.out.println("actualDate: " + actualDate5);
 		System.out.println("Are Equal: " + actualDate5.equals(expectedDate5));
-
+	}
+	
+	public static void main(String[] args) {
+		DateTest.testDates();
 	}
 
 }
