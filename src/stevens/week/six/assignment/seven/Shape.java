@@ -1,4 +1,4 @@
-package stevens.week.seven;
+package stevens.week.six.assignment.seven;
 
 /**
  * Create an abstract class to make adding additional shapes easier

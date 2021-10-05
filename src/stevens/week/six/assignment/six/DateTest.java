@@ -1,4 +1,4 @@
-package stevens.week.six;
+package stevens.week.six.assignment.six;
 
 public class DateTest {
 	

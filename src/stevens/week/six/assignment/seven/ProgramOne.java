@@ -1,4 +1,4 @@
-package stevens.week.seven;
+package stevens.week.six.assignment.seven;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

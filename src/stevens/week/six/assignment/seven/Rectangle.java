@@ -1,4 +1,4 @@
-package stevens.week.seven;
+package stevens.week.six.assignment.seven;
 
 /**
  * Rectangle class that extends the abstract class Shape.

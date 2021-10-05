@@ -1,4 +1,4 @@
-package stevens.week.six;
+package stevens.week.six.assignment.six;
 
 /**
  * Program One - Exercise 7.13 JHTP (Date Class): Create a class called Date that includes 3 instance 
