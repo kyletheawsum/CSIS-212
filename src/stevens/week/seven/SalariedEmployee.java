@@ -4,8 +4,8 @@ public class SalariedEmployee extends Employee {
 	private double weeklySalary;
 	
 	 // constructor
-	 public SalariedEmployee(String firstName, String lastName, String socialSecurityNumber, double weeklySalary) {
-		 super(firstName, lastName, socialSecurityNumber);
+	 public SalariedEmployee(String firstName, String lastName, String socialSecurityNumber, double weeklySalary, int month, int day, int year) {
+		 super(firstName, lastName, socialSecurityNumber, month, day, year);
 		 if (weeklySalary < 0.0) {
 			 throw new IllegalArgumentException(
 					 "Weekly salary must be >= 0.0");
